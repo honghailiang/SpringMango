@@ -1,0 +1,79 @@
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.5
+version = '1.0'
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Quickstart',
+                   'Implementation-Version': version
+    }
+}
+
+repositories {
+	jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+    
+    //servlet
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+    runtime("jstl:jstl:1.2")
+    
+    //spring
+  	def springVersion = "4.3.2.RELEASE"; 
+    compile "org.springframework:spring-context:$springVersion"  
+    compile "org.springframework:spring-core:$springVersion"  
+    compile "org.springframework:spring-webmvc:$springVersion"
+    
+    //sitemesh
+    compile "org.sitemesh:sitemesh:3.0.0"
+    
+    //log4j2
+    def log4j_version = "2.2";
+    compile "org.apache.logging.log4j:log4j-api:$log4j_version"
+	compile "org.apache.logging.log4j:log4j-core:$log4j_version"
+	compile "org.apache.logging.log4j:log4j-slf4j-impl:$log4j_version"
+	
+	//hibernate
+	compile group: 'org.springframework', name: 'spring-orm', version: "$springVersion"
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.2.5.Final'
+	
+	//mysql
+	compile "mysql:mysql-connector-java:5.1.38" 
+	
+	//c3p0 
+	//compile "c3p0:c3p0:0.9.1.2"
+	compile group: 'org.hibernate', name: 'hibernate-c3p0', version: '5.2.5.Final'
+	
+	
+	//aspectj
+	compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.8.9'
+	
+	//spring-security
+	compile 'org.springframework.security:spring-security-web:4.1.3.RELEASE'
+	compile 'org.springframework.security:spring-security-config:4.1.3.RELEASE'
+	compile 'org.springframework.security:spring-security-taglibs:4.1.3.RELEASE'
+	// spring-test
+    testCompile group: 'org.springframework', name: 'spring-test', version: "$springVersion"
+
+}
+
+test {
+    systemProperties 'property': 'value'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}
+
+task wrapper(type:Wrapper){
+		gradleVersion = '2.14'
+}

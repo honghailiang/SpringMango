@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+	   http://www.springframework.org/schema/aop 
+	   http://www.springframework.org/schema/aop/spring-aop.xsd" >
+	<!-- 基于xml的aop配置 -->
+	<bean id="xmlAspect" class="com.mango.jtt.springAspect.XmlAspect"></bean>
+	<aop:config>
+		<aop:aspect ref="xmlAspect">
+			<aop:pointcut expression="execution(* com.mango.jtt.service.ProductServiceImpl.getProductById(..))" 
+						  id="getProductById"/>
+			<aop:before method="beforeGet" pointcut-ref="getProductById"/>
+			<aop:after method="afterGet" pointcut-ref="getProductById"/>
+			<aop:around method="aroundGet" pointcut-ref="getProductById"/>
+			<aop:after-returning method="afterReturningGet"
+								 pointcut="execution(* com.mango.jtt.service.ProductServiceImpl.getProductById(String)) 
+					                       and args(productId)"
+								 arg-names="productId"/>
+		</aop:aspect>
+	</aop:config>
+	
+	<!-- 基于@AspectJ注解的aop配置 @see com.mango.jtt.springAspect.LogAspect -->
+	<!-- 启用@AspectJ注解驱动的切面 -->
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	
+	
+</beans>

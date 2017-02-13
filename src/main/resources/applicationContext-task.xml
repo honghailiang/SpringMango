@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:task="http://www.springframework.org/schema/task" 
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/task 
+       http://www.springframework.org/schema/task/spring-task.xsd">
+       
+	<task:scheduled-tasks>   
+    	<!-- 定时任务  com.mango.springTask.TaskJob.job1()-->
+    	<task:scheduled ref="taskJob" method="job1" cron="0 0/10 * * * ?"/>   
+	</task:scheduled-tasks>
+	
+	<!-- 基于@Scheduled注解的task，直接在方法上使用 @Scheduled注解即可-->
+	<task:annotation-driven/>
+</beans>
+
+
