@@ -1,5 +1,6 @@
 package com.mango.jtt.po;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -63,6 +64,19 @@ public class Order extends BaseBean {
 	 * 支付时间
 	 */
 	private String payTime;
+	/**
+	 * 地址信息
+	 */
+	@Embedded
+	private Address address;
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 
 	public String getProductId() {
 		return productId;

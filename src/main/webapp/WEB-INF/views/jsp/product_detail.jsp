@@ -31,6 +31,9 @@
 	<p>
 		购买数量：<input name="number" value="1"/>
 	</p>
+		<p>
+			收货人地址，街道：<input name="address.street"/> 城市：<input name="address.city"/>
+		</p>
 	<input type="submit" value="立即购买" />
 	</div>
 </form>
