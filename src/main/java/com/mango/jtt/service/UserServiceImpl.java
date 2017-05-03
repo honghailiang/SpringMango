@@ -3,7 +3,9 @@
  */
 package com.mango.jtt.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,8 +29,10 @@ public class UserServiceImpl implements IUserService {
 	 */
 	@Override
 	public MangoUser getUserByName(String name) {
-		String sql = "from MangoUser user where user.userName='" + name + "'";
-		List list = dao.list(sql);
+		String sql = "from MangoUser user where user.userName=:userName";
+		Map<String, Object> paramMap = new HashMap<String, Object>();
+		paramMap.put("userName", name);
+		List list = dao.list(sql, paramMap);
 		MangoUser user = null;
 		if (list != null && list.size() > 0) {
 			user = (MangoUser) list.get(0);

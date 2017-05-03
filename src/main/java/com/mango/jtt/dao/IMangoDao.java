@@ -4,6 +4,7 @@
 package com.mango.jtt.dao;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * dao处理基类接口
@@ -16,10 +17,11 @@ public interface IMangoDao {
 
 	/**
 	 * 根据查询条件获取查询结果
-	 * 
+	 * @param querySql
+	 * @param map  条件参数
 	 * @return
 	 */
-	List list(String querySql);
+	List list(String querySql, Map<String, Object> map);
 
 	/**
 	 * 根据id获取对象

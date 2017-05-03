@@ -4,6 +4,7 @@
 package com.mango.jtt.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -29,8 +30,15 @@ public class MangoDaoImpl implements IMangoDao {
 	 * @see com.mango.jtt.dao.MangoDao#list(java.lang.String)
 	 */
 	@Override
-	public List list(String querySql) {
+	public List list(String querySql, Map<String, Object> map) {
 		Query<?> query = currentSession().createQuery(querySql);
+		if (map != null) {
+			for (String key : map.keySet()) {
+				if (querySql.indexOf(":" + key) != -1) {
+					query.setParameter(key, map.get(key));
+				}
+			}
+		}
 		return query.getResultList();
 	}
 

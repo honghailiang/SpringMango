@@ -28,7 +28,7 @@ public class ProductServiceImpl implements IProductService {
 	@Override
 	public List<Product> getProductList() {
 		String sql = "from Product";
-		return dao.list(sql);
+		return dao.list(sql, null);
 	}
 
 	@Override
