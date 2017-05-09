@@ -26,6 +26,10 @@
     <Logger name="org.springframework.web" level="info" additivity="false">
       <AppenderRef ref="Console"/>
     </Logger>
+    <!-- Hibernate log配置 -->
+    <Logger name="org.hibernate" level="trace" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
     <!-- log文件配置 -->
     <Logger name="test_logger" level="info" additivity="true">
       <AppenderRef ref="test_logger"/>

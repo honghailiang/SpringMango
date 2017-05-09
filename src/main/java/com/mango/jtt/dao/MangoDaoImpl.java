@@ -3,6 +3,9 @@
  */
 package com.mango.jtt.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
@@ -10,6 +13,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate5.SessionFactoryUtils;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -24,6 +28,11 @@ public class MangoDaoImpl implements IMangoDao {
 
 	private Session currentSession() {
 		return sessionFactory.getCurrentSession();
+	}
+
+	//定义一个获取jdbc连接的方法
+	public Connection getConnection() throws SQLException {
+		return SessionFactoryUtils.getDataSource(sessionFactory).getConnection();
 	}
 
 	/* (non-Javadoc)

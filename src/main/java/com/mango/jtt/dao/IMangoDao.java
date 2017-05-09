@@ -3,6 +3,8 @@
  */
 package com.mango.jtt.dao;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
@@ -45,4 +47,6 @@ public interface IMangoDao {
 	 * @param object
 	 */
 	void updateBean(Object object);
+
+	Connection getConnection() throws SQLException;
 }
