@@ -40,4 +40,15 @@ public class UserServiceImpl implements IUserService {
 		return user;
 	}
 
+	@Override
+	public List<MangoUser> getUserList() {
+		String sql = "from MangoUser ";
+		return dao.list(sql, null);
+	}
+
+	@Override
+	public void saveUser(MangoUser mangoUser) {
+		dao.saveBean(mangoUser);
+	}
+
 }

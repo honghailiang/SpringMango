@@ -28,5 +28,11 @@ public interface IProductService {
 	 * @param productId
 	 * @return
 	 */
-	Product getProductById(String productId);
+	Product getProductById(Long productId);
+
+	/**
+	 * 添加商品记录
+	 * @param product
+	 */
+    void saveProduct(Product product);
 }

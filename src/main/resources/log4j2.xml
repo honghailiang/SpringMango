@@ -27,7 +27,7 @@
       <AppenderRef ref="Console"/>
     </Logger>
     <!-- Hibernate log配置 -->
-    <Logger name="org.hibernate" level="trace" additivity="false">
+    <Logger name="org.hibernate" level="info" additivity="false">
       <AppenderRef ref="Console"/>
     </Logger>
     <!-- log文件配置 -->

@@ -20,11 +20,11 @@ public class Order extends BaseBean {
 	 * 订单编号
 	 */
 	@Id
-	private String orderId;
+	private Long orderId;
 	/**
 	 * 商品id
 	 */
-	private String productId;
+	private Long productId;
 	/**
 	 * 商品名称
 	 */
@@ -50,7 +50,7 @@ public class Order extends BaseBean {
 	/**
 	 * 购买用户id
 	 */
-	private String userId;
+	private Long userId;
 
 	/**
 	 * 用户名称
@@ -78,11 +78,11 @@ public class Order extends BaseBean {
 		this.address = address;
 	}
 
-	public String getProductId() {
+	public Long getProductId() {
 		return productId;
 	}
 
-	public void setProductId(String productId) {
+	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
 
@@ -118,11 +118,11 @@ public class Order extends BaseBean {
 		this.totalPrice = totalPrice;
 	}
 
-	public String getOrderId() {
+	public Long getOrderId() {
 		return orderId;
 	}
 
-	public void setOrderId(String orderId) {
+	public void setOrderId(Long orderId) {
 		this.orderId = orderId;
 	}
 
@@ -134,11 +134,11 @@ public class Order extends BaseBean {
 		this.createTime = createTime;
 	}
 
-	public String getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 

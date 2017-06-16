@@ -27,7 +27,7 @@ public interface IOrderService {
 	 * @param orderId
 	 * @return
 	 */
-	Order getOrderById(String orderId);
+	Order getOrderById(Long orderId);
 
 	/**
 	 * ¸üÐÂ¶©µ¥

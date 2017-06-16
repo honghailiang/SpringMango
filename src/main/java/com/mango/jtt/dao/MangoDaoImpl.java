@@ -52,7 +52,7 @@ public class MangoDaoImpl implements IMangoDao {
 	}
 
 	@Override
-	public Object get(Class clazz, String productId) {
+	public Object get(Class clazz, Long productId) {
 		return currentSession().get(clazz, productId);
 	}
 

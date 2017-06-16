@@ -1,8 +1,6 @@
 package com.mango.jtt.po;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 /**
@@ -24,7 +22,8 @@ public class Product extends BaseBean {
 	 * 商品id
 	 */
 	@Id
-	private String productId;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long productId;
 	/**
 	 * 商品名称
 	 */
@@ -46,11 +45,11 @@ public class Product extends BaseBean {
 	 */
 	private String picture;
 
-	public String getProductId() {
+	public Long getProductId() {
 		return productId;
 	}
 
-	public void setProductId(String productId) {
+	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
 	public double getQuantity() {

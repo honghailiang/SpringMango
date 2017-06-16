@@ -3,10 +3,7 @@
  */
 package com.mango.jtt.service;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,31 +30,42 @@ public class ProductServiceImpl implements IProductService {
 	 */
 	@Override
 	public List<Product> getProductList() {
-		String sql = "from Product";
-//		try {
-//			Connection connection = dao.getConnection();
-//			PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM product p WHERE p.productName=?");
-//			preparedStatement.setString(1,"'Mango'");
-//			ResultSet resultSet = preparedStatement.executeQuery();
-//			String productId;
-//			while (resultSet.next()){
-//				productId = (String) resultSet.getObject(1);
-//				System.out.println(productId);
-//			}
-//			resultSet.close();
-//			preparedStatement.close();
-//			connection.close();
-//
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
+		String sql = "from Product ";
 		return dao.list(sql, null);
 	}
 
 	@Override
-	public Product getProductById(String productId) {
+	public Product getProductById(Long productId) {
 
 		return (Product) dao.get(Product.class, productId);
+	}
+
+	@Override
+	public void saveProduct(Product product) {
+		dao.saveBean(product);
+	}
+
+	public static void JDBCExample(){
+		try {
+			//Class.forName("com.mysql.jdbc.Driver");
+			Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/hhl?useServerPrepStmts=true&cachePrepStmts=true&prepStmtCacheSize=25&prepStmtCacheSqlLimit=2048&characterEncoding=utf8&useSSL=false",
+					"root", "123456");
+			PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM product p WHERE p.productName=?");
+			preparedStatement.setString(1,"Mango");
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()){
+				System.out.println(resultSet.getString(1));
+			}
+			resultSet.close();
+			preparedStatement.close();
+			connection.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void main(String[] args){
+		JDBCExample();
 	}
 
 }

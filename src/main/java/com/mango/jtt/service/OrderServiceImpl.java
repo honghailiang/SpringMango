@@ -32,7 +32,7 @@ public class OrderServiceImpl implements IOrderService {
 	 * @see com.mango.jtt.service.IOrderService#getOrderById(java.lang.String)
 	 */
 	@Override
-	public Order getOrderById(String orderId) {
+	public Order getOrderById(Long orderId) {
 		return (Order) dao.get(Order.class, orderId);
 	}
 

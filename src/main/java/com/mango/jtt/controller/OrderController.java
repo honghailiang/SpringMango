@@ -40,7 +40,7 @@ public class OrderController {
 	public String orderSubmit(Order order, HttpSession session, Model model) {
 
 		order.setTotalPrice(order.getUnitPrice() * order.getNumber());
-		order.setOrderId(DateUtil.getDateFormat1(new Date()));
+		order.setOrderId(Long.valueOf(DateUtil.getDateFormat1(new Date())));
 		order.setCreateTime(DateUtil.getDateFormat2(new Date()));
 		MangoUser user = (MangoUser) session.getAttribute("user");
 		if (null != user) {
@@ -61,7 +61,7 @@ public class OrderController {
 	 * @return 订单信息
 	 */
 	@RequestMapping("order/{orderId}")
-	public String orderSave(@PathVariable String orderId, Model model) {
+	public String orderSave(@PathVariable Long orderId, Model model) {
 		Order order = orderService.getOrderById(orderId);
 		model.addAttribute("order", order);
 		return "order_submit";
@@ -73,7 +73,7 @@ public class OrderController {
 	 * @return 订单支付信息
 	 */
 	@RequestMapping("pay/{orderId}")
-	public String orderPayInfo(@PathVariable String orderId, Model model) {
+	public String orderPayInfo(@PathVariable Long orderId, Model model) {
 		Order order = orderService.getOrderById(orderId);
 		model.addAttribute("order", order);
 		return "order_pay";
@@ -85,7 +85,7 @@ public class OrderController {
 	 * @return 订单支付
 	 */
 	@RequestMapping("order/{orderId}/pay")
-	public String orderPay(@PathVariable String orderId, Model model) {
+	public String orderPay(@PathVariable Long orderId, Model model) {
 		Order order = orderService.getOrderById(orderId);
 		order.setStatus("1");
 		order.setPayTime(DateUtil.getDateFormat2(new Date()));

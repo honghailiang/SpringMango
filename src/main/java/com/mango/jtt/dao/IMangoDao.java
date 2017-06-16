@@ -32,7 +32,7 @@ public interface IMangoDao {
 	 * @param productId
 	 * @return
 	 */
-	Object get(Class clazz, String productId);
+	Object get(Class clazz, Long productId);
 
 	/**
 	 * ±£¥Ê∂‘œÛ
