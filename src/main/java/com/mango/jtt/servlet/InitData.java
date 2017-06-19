@@ -30,7 +30,7 @@ public class InitData implements ApplicationListener<ContextRefreshedEvent> {
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
         if (event.getApplicationContext().getParent() == null) {
-            //库中没有商品则声称一个
+            //库中没有商品则添加一个
             List<Product> products = productService.getProductList();
             if (null == products || products.isEmpty()){
                 Product product = new Product();

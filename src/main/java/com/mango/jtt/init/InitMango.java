@@ -26,7 +26,7 @@ public class InitMango{
 
     @PostConstruct
     public void init() {
-        //库中没有商品则声称一个
+        //库中没有商品则添加一个
         List<Product> products = productService.getProductList();
         if (null == products || products.isEmpty()){
             Product product = new Product();
