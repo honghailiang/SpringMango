@@ -6,15 +6,14 @@ import com.mango.jtt.service.IProductService;
 import com.mango.jtt.service.IUserService;
 import com.mango.jtt.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import java.util.List;
 
 /**
+ * @author Herman Hong
  * Created by Administrator on 2017/6/16.
  */
 

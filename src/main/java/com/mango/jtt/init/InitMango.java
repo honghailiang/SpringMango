@@ -5,7 +5,6 @@ import com.mango.jtt.po.Product;
 import com.mango.jtt.service.IProductService;
 import com.mango.jtt.service.IUserService;
 import com.mango.jtt.util.StringUtil;
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
