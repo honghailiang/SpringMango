@@ -17,7 +17,7 @@ import java.util.List;
  * Created by Administrator on 2017/6/16.
  */
 
-//交给Spring管理，如果不是自动扫描加载bean的方式，则在xml里配一个即可
+//交给Spring管理，如果不是自动扫描加载bean的方式，则在xml里配一个即可,refresh发布ContextRefreshedEvent事件时会调用，在bean初始化后
 @Component
 public class InitData implements ApplicationListener<ContextRefreshedEvent> {
 
@@ -31,6 +31,7 @@ public class InitData implements ApplicationListener<ContextRefreshedEvent> {
         if (event.getApplicationContext().getParent() == null) {
             //库中没有商品则添加一个
             List<Product> products = productService.getProductList();
+
             if (null == products || products.isEmpty()){
                 Product product = new Product();
                 product.setProductName("Mango");
