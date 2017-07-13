@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss.SSS} [%t] %-5level %l %msg%n"/>
+    </Console>
+    
+    <RollingFile name="test_logger" filename="/logs/test_logger.log"
+      filepattern="/logs/test_logger.%d{yyyy-MM-dd-HH}.log">
+  	<PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss.SSS} %5p [%t] %c(%F:%L) - %msg%n" />
+      <Policies>
+      	<!-- 文件大小配置 -->
+        <SizeBasedTriggeringPolicy size="100 KB"/>
+      </Policies>	
+       <!-- 共存log文件数量 -->
+       <DefaultRolloverStrategy max="20"/>
+    </RollingFile>
+    
+  </Appenders>
+  
+  <Loggers>
+    <Root level="info">
+      <AppenderRef ref="Console"/>
+    </Root>
+    <!-- springMVC log配置 -->
+    <Logger name="org.springframework.web" level="info" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+    <!-- Hibernate log配置 -->
+    <Logger name="org.hibernate" level="info" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+    <!-- log文件配置 -->
+    <Logger name="test_logger" level="info" additivity="true">
+      <AppenderRef ref="test_logger"/>
+    </Logger>
+  </Loggers>
+</Configuration>
