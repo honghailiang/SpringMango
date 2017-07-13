@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.mango.jtt.springAspect;
 
@@ -9,11 +9,11 @@ import org.springframework.core.Ordered;
 import com.mango.jtt.util.LogUtil;
 
 /**
- * »ùÓÚxmlµÄaopÅäÖÃ
- * 
+ * åŸºäºxmlçš„aopé…ç½®
+ *
  * @author HHL
- * 
- * @date 2016Äê12ÔÂ6ÈÕ
+ *
+ * @date 2016å¹´12æœˆ6æ—¥
  */
 public class XmlAspect implements Ordered {
 	public void beforeGet() {
@@ -37,12 +37,12 @@ public class XmlAspect implements Ordered {
 	}
 
 	public void afterReturningGet(String productId) {
-		LogUtil.printInfoLog(getClass(), "afterReturningGet----productId£º"
+		LogUtil.printInfoLog(getClass(), "afterReturningGet----productIdï¼š"
 				+ productId);
 	}
 
 	/*
-	 * ÅäÖÃ¸ÃÇĞÃæµÄµÄÓÅÏÈ¼¶
+	 * é…ç½®è¯¥åˆ‡é¢çš„çš„ä¼˜å…ˆçº§
 	 */
 	@Override
 	public int getOrder() {

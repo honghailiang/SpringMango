@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.mango.jtt.dao;
 
@@ -9,25 +9,25 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * dao´¦Àí»ùÀà½Ó¿Ú
- * 
+ * daoå¤„ç†åŸºç±»æ¥å£
+ *
  * @author HHL
- * 
- * @date 2016Äê11ÔÂ29ÈÕ
+ *
+ * @date 2016å¹´11æœˆ29æ—¥
  */
 public interface IMangoDao {
 
 	/**
-	 * ¸ù¾İ²éÑ¯Ìõ¼ş»ñÈ¡²éÑ¯½á¹û
+	 * æ ¹æ®æŸ¥è¯¢æ¡ä»¶è·å–æŸ¥è¯¢ç»“æœ
 	 * @param querySql
-	 * @param map  Ìõ¼ş²ÎÊı
+	 * @param map  æ¡ä»¶å‚æ•°
 	 * @return
 	 */
 	List list(String querySql, Map<String, Object> map);
 
 	/**
-	 * ¸ù¾İid»ñÈ¡¶ÔÏó
-	 * 
+	 * æ ¹æ®idè·å–å¯¹è±¡
+	 *
 	 * @param clazz
 	 * @param productId
 	 * @return
@@ -35,15 +35,15 @@ public interface IMangoDao {
 	Object get(Class clazz, Long productId);
 
 	/**
-	 * ±£´æ¶ÔÏó
-	 * 
+	 * ä¿å­˜å¯¹è±¡
+	 *
 	 * @param object
 	 */
 	void saveBean(Object object);
 
 	/**
-	 * ¸üĞÂ¶ÔÏó
-	 * 
+	 * æ›´æ–°å¯¹è±¡
+	 *
 	 * @param object
 	 */
 	void updateBean(Object object);

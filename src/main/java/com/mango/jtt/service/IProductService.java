@@ -8,30 +8,30 @@ import java.util.List;
 import com.mango.jtt.po.Product;
 
 /**
- * ÉÌÆ··şÎñÀà
- * 
+ * å•†å“æœåŠ¡ç±»
+ *
  * @author HHL
- * 
- * @date 2016Äê11ÔÂ30ÈÕ
+ *
+ * @date 2016å¹´11æœˆ30æ—¥
  */
 public interface IProductService {
 	/**
-	 * »ñÈ¡ÉÌÆ·ÁĞ±í
-	 * 
+	 * è·å–å•†å“åˆ—è¡¨
+	 *
 	 * @return
 	 */
 	List<Product> getProductList();
 
 	/**
-	 * ¸ù¾İÉÌÆ·id»ñÈ¡ÉÌÆ·ĞÅÏ¢
-	 * 
+	 * æ ¹æ®å•†å“idè·å–å•†å“ä¿¡æ¯
+	 *
 	 * @param productId
 	 * @return
 	 */
 	Product getProductById(Long productId);
 
 	/**
-	 * Ìí¼ÓÉÌÆ·¼ÇÂ¼
+	 * æ·»åŠ å•†å“è®°å½•
 	 * @param product
 	 */
     void saveProduct(Product product);

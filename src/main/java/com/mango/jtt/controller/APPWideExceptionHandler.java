@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.mango.jtt.controller;
 
@@ -7,17 +7,16 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 /**
- * È«¾ÖÒì³£´¦ÀíÆ÷
- * 
+ * å…¨å±€å¼‚å¸¸å¤„ç†å™¨
+ *
  * @author HHL
- * 
- * @date 2016Äê11ÔÂ23ÈÕ
+ * @date 2016å¹´11æœˆ23æ—¥
  */
 @ControllerAdvice
 public class APPWideExceptionHandler {
 
-	@ExceptionHandler(Exception.class)
-	public String exceptionHandler(){
-		return "errorPage/404";
-	}
+    @ExceptionHandler(Exception.class)
+    public String exceptionHandler() {
+        return "errorPage/404";
+    }
 }

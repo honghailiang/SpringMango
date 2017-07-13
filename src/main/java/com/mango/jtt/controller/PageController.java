@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.mango.jtt.controller;
 
@@ -14,19 +14,19 @@ import com.mango.jtt.po.Product;
 import com.mango.jtt.service.IProductService;
 
 /**
- * Ò³Ãæ´¦ÀíÆ÷
- * 
+ * é¡µé¢å¤„ç†å™¨
+ *
  * @author HHL
- * 
- * @date 2016Äê11ÔÂ22ÈÕ
+ *
+ * @date 2016å¹´11æœˆ22æ—¥
  */
 @Controller
 public class PageController {
 	@Autowired
 	private IProductService productService;
 	/**
-	 * Ê×Ò³ Ó³Éä/ºÍ/indexÂ·¾¶
-	 * 
+	 * é¦–é¡µ æ˜ å°„/å’Œ/indexè·¯å¾„
+	 *
 	 * @return
 	 * @throws Exception
 	 */

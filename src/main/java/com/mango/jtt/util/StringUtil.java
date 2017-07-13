@@ -8,7 +8,7 @@ import java.security.NoSuchAlgorithmException;
  */
 public class StringUtil {
     /**
-     * ÅĞ¶Ï¸ø¶¨×Ö·û´®ÊÇ·ñ¿Õ°×´® ¿Õ°×´®ÊÇÖ¸ÓÉ¿Õ¸ñ¡¢ÖÆ±í·û¡¢»Ø³µ·û¡¢»»ĞĞ·û×é³ÉµÄ×Ö·û´® ÈôÊäÈë×Ö·û´®Îªnull»ò¿Õ×Ö·û´®£¬·µ»Øtrue
+     * åˆ¤æ–­ç»™å®šå­—ç¬¦ä¸²æ˜¯å¦ç©ºç™½ä¸² ç©ºç™½ä¸²æ˜¯æŒ‡ç”±ç©ºæ ¼ã€åˆ¶è¡¨ç¬¦ã€å›è½¦ç¬¦ã€æ¢è¡Œç¬¦ç»„æˆçš„å­—ç¬¦ä¸² è‹¥è¾“å…¥å­—ç¬¦ä¸²ä¸ºnullæˆ–ç©ºå­—ç¬¦ä¸²ï¼Œè¿”å›true
      */
     public static boolean isEmpty(CharSequence input) {
         if (input == null || "".equals(input))
@@ -24,9 +24,9 @@ public class StringUtil {
     }
 
     /**
-     * md5¼ÓÃÜ²ÉÓÃUTF-8±àÂë
-     * @param text ¼ÓÃÜÇ°µÄ×Ö·û´®
-     * @return ·µ»Ø¼ÓÃÜºóµÄ×Ö·û´®
+     * md5åŠ å¯†é‡‡ç”¨UTF-8ç¼–ç 
+     * @param text åŠ å¯†å‰çš„å­—ç¬¦ä¸²
+     * @return è¿”å›åŠ å¯†åçš„å­—ç¬¦ä¸²
      */
     public static String md5(String text) {
         MessageDigest msgDigest = null;

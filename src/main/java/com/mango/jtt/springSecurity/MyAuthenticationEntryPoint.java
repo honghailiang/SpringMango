@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.mango.jtt.springSecurity;
 
@@ -14,11 +14,11 @@ import org.springframework.util.AntPathMatcher;
 import org.springframework.util.PathMatcher;
 
 /**
- * ±»ÈÏÖ¤ÇëÇóÏòµÇÂ¼Ò³ÃæÌø×ªµÄ¿ØÖÆ ¸ù¾İ±»ÇëÇóËùĞèÈ¨ÏŞÏò²»Í¬µÇÂ¼Ò³ÃæÌø×ª
- * 
+ * è¢«è®¤è¯è¯·æ±‚å‘ç™»å½•é¡µé¢è·³è½¬çš„æ§åˆ¶ æ ¹æ®è¢«è¯·æ±‚æ‰€éœ€æƒé™å‘ä¸åŒç™»å½•é¡µé¢è·³è½¬
+ *
  * @author HHL
- * 
- * @date 2016Äê12ÔÂ20ÈÕ
+ *
+ * @date 2016å¹´12æœˆ20æ—¥
  */
 public class MyAuthenticationEntryPoint extends
 		LoginUrlAuthenticationEntryPoint {
@@ -30,7 +30,7 @@ public class MyAuthenticationEntryPoint extends
 	private Map<String, String> authEntryPointMap;
 	private PathMatcher pathMatcher = new AntPathMatcher();
 
-	// ¸ù¾İÇëÇóÂ·¾¶·µ»Ø²»Í¬µÄµÇÂ¼Ò³Â·¾¶
+	// æ ¹æ®è¯·æ±‚è·¯å¾„è¿”å›ä¸åŒçš„ç™»å½•é¡µè·¯å¾„
 	@Override
 	protected String determineUrlToUseForThisRequest(
 			HttpServletRequest request, HttpServletResponse response,

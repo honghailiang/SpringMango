@@ -6,18 +6,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * security¿ØÖÆÀà
- * 
+ * securityæ§åˆ¶ç±»
+ *
  * @author HHL
- * 
- * @date 2016Äê12ÔÂ20ÈÕ
+ *
+ * @date 2016å¹´12æœˆ20æ—¥
  */
 @Controller
 public class SecurityController {
 
 	/**
-	 * ¾Ü¾ø·ÃÎÊÊ±Ìø×ªÒ³Ãæ
-	 * 
+	 * æ‹’ç»è®¿é—®æ—¶è·³è½¬é¡µé¢
+	 *
 	 * @param request
 	 * @param response
 	 * @return

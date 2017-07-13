@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.mango.jtt.springSecurity;
 
@@ -13,11 +13,11 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 
 /**
- * µÇÂ¼Ê§°Ü¿ØÖÆ
- * 
+ * ç™»å½•å¤±è´¥æ§åˆ¶
+ *
  * @author HHL
- * 
- * @date 2016Äê12ÔÂ20ÈÕ
+ *
+ * @date 2016å¹´12æœˆ20æ—¥
  */
 public class MyAuthenticationFailureHandler extends
 		SimpleUrlAuthenticationFailureHandler {
@@ -33,9 +33,9 @@ public class MyAuthenticationFailureHandler extends
 
 	@Override
 	public void onAuthenticationFailure(HttpServletRequest request,
-			HttpServletResponse response, AuthenticationException exception)
+										HttpServletResponse response, AuthenticationException exception)
 			throws IOException, ServletException {
-		// ´ÓloginEntryÖĞ»ñÈ¡µÇÂ¼Ê§°ÜÒªÌø×ªµÄurl£¬²¢¼ÓÉÏ´íÎóĞÅÏ¢error
+		// ä»loginEntryä¸­è·å–ç™»å½•å¤±è´¥è¦è·³è½¬çš„urlï¼Œå¹¶åŠ ä¸Šé”™è¯¯ä¿¡æ¯error
 		String authenfailureUrl = this.loginEntry
 				.determineUrlToUseForThisRequest(request, response, exception);
 		authenfailureUrl = authenfailureUrl + "?error";

@@ -21,11 +21,11 @@ import com.mango.jtt.po.MangoUser;
 import com.mango.jtt.service.IUserService;
 
 /**
- * µÇÂ¼ÊÚÈ¨³É¹¦ºó²Ù×÷¿ØÖÆ£¬Èç¹ûÊÇÖ±½Óµã»÷µÇÂ¼µÄÇé¿öÏÂ£¬¸ù¾İÊÚÈ¨È¨ÏŞÌø×ª²»Í¬Ò³Ãæ£» ·ñÔòÌø×ªµ½Ô­ÇëÇóÒ³Ãæ
- * 
+ * ç™»å½•æˆæƒæˆåŠŸåæ“ä½œæ§åˆ¶ï¼Œå¦‚æœæ˜¯ç›´æ¥ç‚¹å‡»ç™»å½•çš„æƒ…å†µä¸‹ï¼Œæ ¹æ®æˆæƒæƒé™è·³è½¬ä¸åŒé¡µé¢ï¼› å¦åˆ™è·³è½¬åˆ°åŸè¯·æ±‚é¡µé¢
+ *
  * @author HHL
  * @date
- * 
+ *
  */
 public class MyAuthenticationSuccessHandler extends
 		SavedRequestAwareAuthenticationSuccessHandler {
@@ -37,28 +37,28 @@ public class MyAuthenticationSuccessHandler extends
 
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request,
-			HttpServletResponse response, Authentication authentication)
+										HttpServletResponse response, Authentication authentication)
 			throws IOException, ServletException {
-		// »ñÈ¡ÓÃ»§È¨ÏŞ
+		// è·å–ç”¨æˆ·æƒé™
 		Collection<? extends GrantedAuthority> authCollection = authentication
 				.getAuthorities();
 		if (authCollection.isEmpty()) {
 			return;
 		}
 
-		// ÈÏÖ¤³É¹¦ºó£¬»ñÈ¡ÓÃ»§ĞÅÏ¢²¢Ìí¼Óµ½sessionÖĞ
+		// è®¤è¯æˆåŠŸåï¼Œè·å–ç”¨æˆ·ä¿¡æ¯å¹¶æ·»åŠ åˆ°sessionä¸­
 		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
 		MangoUser user = userService.getUserByName(userDetails.getUsername());
 		request.getSession().setAttribute("user", user);
-		
+
 		String url = null;
-		// ´Ó±ğµÄÇëÇóÒ³ÃæÌø×ª¹ıÀ´µÄÇé¿ö£¬savedRequest²»Îª¿Õ
+		// ä»åˆ«çš„è¯·æ±‚é¡µé¢è·³è½¬è¿‡æ¥çš„æƒ…å†µï¼ŒsavedRequestä¸ä¸ºç©º
 		SavedRequest savedRequest = requestCache.getRequest(request, response);
 		if (savedRequest != null) {
 			url = savedRequest.getRedirectUrl();
 		}
 
-		// Ö±½Óµã»÷µÇÂ¼Ò³Ãæ£¬¸ù¾İµÇÂ¼ÓÃ»§µÄÈ¨ÏŞÌø×ªµ½²»Í¬µÄÒ³Ãæ
+		// ç›´æ¥ç‚¹å‡»ç™»å½•é¡µé¢ï¼Œæ ¹æ®ç™»å½•ç”¨æˆ·çš„æƒé™è·³è½¬åˆ°ä¸åŒçš„é¡µé¢
 		if (url == null) {
 			for (GrantedAuthority auth : authCollection) {
 				url = authDispatcherMap.get(auth.getAuthority());
@@ -67,7 +67,7 @@ public class MyAuthenticationSuccessHandler extends
 		}
 
 		super.onAuthenticationSuccess(request, response, authentication);
-	
+
 	}
 
 

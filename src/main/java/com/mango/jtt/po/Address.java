@@ -5,7 +5,7 @@ import javax.persistence.Embeddable;
 
 /**
  * Created by DELL on 2017/4/19.
- * 订单地址信息
+ * 璁㈠崟鍦板潃淇℃伅
  */
 @Embeddable
 public class Address extends BaseBean {

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.mango.jtt.po;
 
@@ -7,33 +7,33 @@ import javax.persistence.*;
 
 /**
  * @author HHL
- * 
- * @date 2016Äê12ÔÂ7ÈÕ ÓÃ»§ĞÅÏ¢
+ *
+ * @date 2016å¹´12æœˆ7æ—¥ ç”¨æˆ·ä¿¡æ¯
  */
 @Entity
 @Table(name = "mango_user")
 public class MangoUser extends BaseBean {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = -9068362068362830589L;
 	/**
-	 * ÓÃ»§id
+	 * ç”¨æˆ·id
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long userId;
 	/**
-	 * ÓÃ»§Ãû³Æ
+	 * ç”¨æˆ·åç§°
 	 */
 	private String userName;
 	/**
-	 * ÓÃ»§ÃÜÂë
+	 * ç”¨æˆ·å¯†ç 
 	 */
 	private String password;
 	/**
-	 * ÓÃ»§½ÇÉ«
+	 * ç”¨æˆ·è§’è‰²
 	 */
 	private String role;
 

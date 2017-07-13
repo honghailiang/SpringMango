@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.mango.jtt.util;
 
@@ -9,8 +9,8 @@ import java.util.Date;
 
 /**
  * @author HHL
- * 
- * @date 2016Äê9ÔÂ21ÈÕ ÈÕÆÚ¹¤¾ßÀà
+ *
+ * @date 2016å¹´9æœˆ21æ—¥ æ—¥æœŸå·¥å…·ç±»
  */
 public class DateUtil {
 	private static String dateMode1 = "yyyyMMddHHmmss";
@@ -20,7 +20,7 @@ public class DateUtil {
 	private static DateFormat dateFormat2 = new SimpleDateFormat(dateMode2);
 
 	/**
-	 * @return ÈÕÆÚ¸ñÊ½yyyyMMddHHmmss
+	 * @return æ—¥æœŸæ ¼å¼yyyyMMddHHmmss
 	 */
 	public static String getDateFormat1(Date date) {
 		return dateFormat1.format(date)
@@ -28,7 +28,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * @return ÈÕÆÚ¸ñÊ½yyyy-MM-dd HH:mm:ss
+	 * @return æ—¥æœŸæ ¼å¼yyyy-MM-dd HH:mm:ss
 	 */
 	public static String getDateFormat2(Date date) {
 		return dateFormat2.format(date)

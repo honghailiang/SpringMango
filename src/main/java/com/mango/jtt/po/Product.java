@@ -5,43 +5,43 @@ import javax.persistence.*;
 
 /**
  * @author HHL
- * 
- * @date 2016Äê9ÔÂ12ÈÕ
- * 
- *       ÉÌÆ·Àà
+ *
+ * @date 2016å¹´9æœˆ12æ—¥
+ *
+ *       å•†å“ç±»
  */
 @Entity
 @Table(name = "product")
 public class Product extends BaseBean {
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 3844317879498218112L;
 
 	/**
-	 * ÉÌÆ·id
+	 * å•†å“id
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long productId;
 	/**
-	 * ÉÌÆ·Ãû³Æ
+	 * å•†å“åç§°
 	 */
 	private String productName;
 	/**
-	 * ÉÌÆ·µ¥¼Û
+	 * å•†å“å•ä»·
 	 */
 	private double unitPrice;
 	/**
-	 * ¿â´æ
+	 * åº“å­˜
 	 */
 	private double quantity;
 	/**
-	 * µ¥Î»
+	 * å•ä½
 	 */
 	private String unit;
 	/**
-	 * ÉÌÆ·Í¼Æ¬µØÖ·
+	 * å•†å“å›¾ç‰‡åœ°å€
 	 */
 	private String picture;
 
@@ -82,5 +82,5 @@ public class Product extends BaseBean {
 	public void setPicture(String picture) {
 		this.picture = picture;
 	}
-	
+
 }

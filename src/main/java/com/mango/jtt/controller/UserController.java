@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.mango.jtt.controller;
 
@@ -16,26 +16,26 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author HHL
- * 
- * @date 2016Äê12ÔÂ8ÈÕ
- * 
- *       ÓÃ»§¿ØÖÆÀà
+ *
+ * @date 2016å¹´12æœˆ8æ—¥
+ *
+ *       ç”¨æˆ·æ§åˆ¶ç±»
  */
 @Controller
 public class UserController {
-	
+
 	/**
-	 * ÏÔÊ¾µÇÂ¼Ò³ÃæÓÃ£¬Ö÷ÒªÊÇÏÔÊ¾´íÎóĞÅÏ¢
-	 * 
+	 * æ˜¾ç¤ºç™»å½•é¡µé¢ç”¨ï¼Œä¸»è¦æ˜¯æ˜¾ç¤ºé”™è¯¯ä¿¡æ¯
+	 *
 	 * @param model
 	 * @param error
 	 * @return
 	 */
 	@RequestMapping("/login")
 	public String login(Model model,
-			@RequestParam(value = "error", required = false) String error) {
+						@RequestParam(value = "error", required = false) String error) {
 		if (error != null) {
-			model.addAttribute("error", "ÓÃ»§Ãû»òÃÜÂë´íÎó");
+			model.addAttribute("error", "ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯");
 		}
 		return "login";
 	}
@@ -43,7 +43,7 @@ public class UserController {
 	@RequestMapping("/user")
 	@ResponseBody
 	public Map<String, Object> getUserById(String userId,
-			HttpServletResponse res) {
+										   HttpServletResponse res) {
 		Map<String, Object> ret = new HashMap<String, Object>();
 		ret.put("state", "1");
 		ret.put("data", 123456);

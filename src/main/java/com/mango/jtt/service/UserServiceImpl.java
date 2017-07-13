@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.mango.jtt.service;
 
@@ -16,7 +16,7 @@ import com.mango.jtt.po.MangoUser;
 /**
  * @author HHL
  *
- * @date 2016Äê12ÔÂ8ÈÕ
+ * @date 2016å¹´12æœˆ8æ—¥
  */
 @Service
 public class UserServiceImpl implements IUserService {

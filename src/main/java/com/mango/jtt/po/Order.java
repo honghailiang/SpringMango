@@ -8,8 +8,8 @@ import javax.persistence.Table;
 
 /**
  * @author HHL
- * 
- * @date 2016Äê9ÔÂ19ÈÕ ¶©µ¥ĞÅÏ¢
+ *
+ * @date 2016å¹´9æœˆ19æ—¥ è®¢å•ä¿¡æ¯
  */
 @Entity
 @Table(name = "omorder")
@@ -17,55 +17,55 @@ public class Order extends BaseBean {
 
 	private static final long serialVersionUID = -8131973629927813366L;
 	/**
-	 * ¶©µ¥±àºÅ
+	 * è®¢å•ç¼–å·
 	 */
 	@Id
 	private Long orderId;
 	/**
-	 * ÉÌÆ·id
+	 * å•†å“id
 	 */
 	private Long productId;
 	/**
-	 * ÉÌÆ·Ãû³Æ
+	 * å•†å“åç§°
 	 */
 	private String productName;
 	/**
-	 * ÉÌÆ·µ¥¼Û
+	 * å•†å“å•ä»·
 	 */
 	private double unitPrice;
 	/**
-	 * ¹ºÂòÊıÁ¿
+	 * è´­ä¹°æ•°é‡
 	 */
 	private int number;
 
 	/**
-	 * ¶©µ¥×Ü¶î
+	 * è®¢å•æ€»é¢
 	 */
 	private double totalPrice;
 
 	/**
-	 * ´´½¨Ê±¼ä
+	 * åˆ›å»ºæ—¶é—´
 	 */
 	private String createTime;
 	/**
-	 * ¹ºÂòÓÃ»§id
+	 * è´­ä¹°ç”¨æˆ·id
 	 */
 	private Long userId;
 
 	/**
-	 * ÓÃ»§Ãû³Æ
+	 * ç”¨æˆ·åç§°
 	 */
 	private String userName;
 	/**
-	 * ¶©µ¥×´Ì¬£º0£ºÎ´Ö§¸¶£¬1:ÒÑÖ§¸¶
+	 * è®¢å•çŠ¶æ€ï¼š0ï¼šæœªæ”¯ä»˜ï¼Œ1:å·²æ”¯ä»˜
 	 */
 	private String status;
 	/**
-	 * Ö§¸¶Ê±¼ä
+	 * æ”¯ä»˜æ—¶é—´
 	 */
 	private String payTime;
 	/**
-	 * µØÖ·ĞÅÏ¢
+	 * åœ°å€ä¿¡æ¯
 	 */
 	@Embedded
 	private Address address;

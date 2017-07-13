@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.mango.jtt.controller;
 
@@ -19,11 +19,11 @@ import com.mango.jtt.service.IOrderService;
 import com.mango.jtt.util.DateUtil;
 
 /**
- * ¶©µ¥¿ØÖÆÀà
- * 
+ * è®¢å•æ§åˆ¶ç±»
+ *
  * @author HHL
- * 
- * @date 2016Äê12ÔÂ1ÈÕ
+ *
+ * @date 2016å¹´12æœˆ1æ—¥
  */
 @Controller
 public class OrderController {
@@ -34,7 +34,7 @@ public class OrderController {
 	 * @param order
 	 * @param session
 	 * @param model
-	 * @return ±£´æ¶©µ¥
+	 * @return ä¿å­˜è®¢å•
 	 */
 	@RequestMapping("order/submit")
 	public String orderSubmit(Order order, HttpSession session, Model model) {
@@ -48,17 +48,17 @@ public class OrderController {
 			order.setUserName(user.getUserName());
 		}
 		orderService.saveOrder(order);
-		// ¸ÄÓÃspring aspect
-		// LogUtil.testLogError("addOrder ·µ»ØÖµ£º" + res, null);
+		// æ”¹ç”¨spring aspect
+		// LogUtil.testLogError("addOrder è¿”å›å€¼ï¼š" + res, null);
 		model.addAttribute("orderId", order.getOrderId());
-		// ·ÀÖ¹ÖØ¸´Ìá½»
+		// é˜²æ­¢é‡å¤æäº¤
 		return "redirect:/order/{orderId}";
 	}
 
 	/**
 	 * @param orderId
 	 * @param model
-	 * @return ¶©µ¥ĞÅÏ¢
+	 * @return è®¢å•ä¿¡æ¯
 	 */
 	@RequestMapping("order/{orderId}")
 	public String orderSave(@PathVariable Long orderId, Model model) {
@@ -70,7 +70,7 @@ public class OrderController {
 	/**
 	 * @param orderId
 	 * @param model
-	 * @return ¶©µ¥Ö§¸¶ĞÅÏ¢
+	 * @return è®¢å•æ”¯ä»˜ä¿¡æ¯
 	 */
 	@RequestMapping("pay/{orderId}")
 	public String orderPayInfo(@PathVariable Long orderId, Model model) {
@@ -82,7 +82,7 @@ public class OrderController {
 	/**
 	 * @param orderId
 	 * @param model
-	 * @return ¶©µ¥Ö§¸¶
+	 * @return è®¢å•æ”¯ä»˜
 	 */
 	@RequestMapping("order/{orderId}/pay")
 	public String orderPay(@PathVariable Long orderId, Model model) {

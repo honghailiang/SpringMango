@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.mango.jtt.controller;
 
@@ -15,13 +15,13 @@ import com.mango.jtt.service.IProductService;
 /**
  * @author HHL
  *
- * @date 2016Äê11ÔÂ30ÈÕ
+ * @date 2016å¹´11æœˆ30æ—¥
  */
 @Controller
 public class ProductController {
 	@Autowired
 	private IProductService productService;
-	
+
 	@RequestMapping("/product/{productId}")
 	public String getProductById(Model model, @PathVariable Long productId) {
 		Product product = productService.getProductById(productId);

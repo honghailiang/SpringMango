@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * Created by Administrator on 2017/6/15.
- * springÈİÆ÷Æô¶¯ºó£¬bean³õÊ¼»¯Ê±»áµ÷ÓÃ£¬³õÊ¼»¯Êı¾İ£¨²úÉúÒ»¸öÄ¬ÈÏÉÌÆ·¡¢ÆÕÍ¨ÓÃ»§ºÍ¹ÜÀíÔ±ÓÃ»§£©
+ * springå®¹å™¨å¯åŠ¨åï¼Œbeanåˆå§‹åŒ–æ—¶ä¼šè°ƒç”¨ï¼Œåˆå§‹åŒ–æ•°æ®ï¼ˆäº§ç”Ÿä¸€ä¸ªé»˜è®¤å•†å“ã€æ™®é€šç”¨æˆ·å’Œç®¡ç†å‘˜ç”¨æˆ·ï¼‰
  */
 @Component
 public class InitMango{
@@ -25,18 +25,18 @@ public class InitMango{
 
     @PostConstruct
     public void init() {
-        //¿âÖĞÃ»ÓĞÉÌÆ·ÔòÌí¼ÓÒ»¸ö
+        //åº“ä¸­æ²¡æœ‰å•†å“åˆ™æ·»åŠ ä¸€ä¸ª
         List<Product> products = productService.getProductList();
         if (null == products || products.isEmpty()){
             Product product = new Product();
             product.setProductName("Mango");
             product.setQuantity(100);
-            product.setUnit("¸ö");
+            product.setUnit("ä¸ª");
             product.setUnitPrice(100);
             productService.saveProduct(product);
         }
 
-        //¿âÖĞÃ»ÓĞÓÃ»§ÔòÌí¼ÓÆÕÍ¨ÓÃ»§ºÍ¹ÜÀíÔ±ÓÃ»§
+        //åº“ä¸­æ²¡æœ‰ç”¨æˆ·åˆ™æ·»åŠ æ™®é€šç”¨æˆ·å’Œç®¡ç†å‘˜ç”¨æˆ·
         List<MangoUser> mangoUsers = userService.getUserList();
         if(null == mangoUsers || mangoUsers.isEmpty()){
             MangoUser mangoUser = new MangoUser();

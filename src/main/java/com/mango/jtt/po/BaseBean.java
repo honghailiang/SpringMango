@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.mango.jtt.po;
 
@@ -7,13 +7,13 @@ import java.io.Serializable;
 
 /**
  * @author HHL
- * 
- * @date 2016Äê9ÔÂ20ÈÕ »ù±¾Àà, ¹©ÆäËûÀà¼Ì³ĞÊµÏÖĞòÁĞ»¯ºÍÄ¬ÈÏ¹¹Ôìº¯Êı
+ *
+ * @date 2016å¹´9æœˆ20æ—¥ åŸºæœ¬ç±», ä¾›å…¶ä»–ç±»ç»§æ‰¿å®ç°åºåˆ—åŒ–å’Œé»˜è®¤æ„é€ å‡½æ•°
  */
 public class BaseBean implements Serializable {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 

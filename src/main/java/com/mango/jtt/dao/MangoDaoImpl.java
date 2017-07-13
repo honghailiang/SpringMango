@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.mango.jtt.dao;
 
@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
 /**
  * @author HHL
  *
- * @date 2016Äê11ÔÂ30ÈÕ
+ * @date 2016å¹´11æœˆ30æ—¥
  */
 @Repository
 public class MangoDaoImpl implements IMangoDao {
@@ -30,7 +30,7 @@ public class MangoDaoImpl implements IMangoDao {
 		return sessionFactory.getCurrentSession();
 	}
 
-	//¶¨ÒåÒ»¸ö»ñÈ¡jdbcÁ¬½ÓµÄ·½·¨
+	//å®šä¹‰ä¸€ä¸ªè·å–jdbcè¿æ¥çš„æ–¹æ³•
 	public Connection getConnection() throws SQLException {
 		return SessionFactoryUtils.getDataSource(sessionFactory).getConnection();
 	}

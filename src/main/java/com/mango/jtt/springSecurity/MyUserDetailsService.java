@@ -12,33 +12,33 @@ import com.mango.jtt.po.MangoUser;
 import com.mango.jtt.service.IUserService;
 
 /**
- * ´ÓÊı¾İ¿âÖĞ»ñÈ¡ĞÅÏ¢µÄ×Ô¶¨ÒåÀà
- * 
+ * ä»æ•°æ®åº“ä¸­è·å–ä¿¡æ¯çš„è‡ªå®šä¹‰ç±»
+ *
  * @author HHL
- * 
+ *
  */
 @Service
 public class MyUserDetailsService implements UserDetailsService {
-	
+
 	@Autowired
 	private IUserService userService;
 
 	/**
-	 * »ñÈ¡ÓÃ»§ĞÅÏ¢£¬ÉèÖÃ½ÇÉ«
+	 * è·å–ç”¨æˆ·ä¿¡æ¯ï¼Œè®¾ç½®è§’è‰²
 	 */
 	@Override
 	public UserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException {
-		// »ñÈ¡ÓÃ»§ĞÅÏ¢
+		// è·å–ç”¨æˆ·ä¿¡æ¯
 		MangoUser mangoUser = userService.getUserByName(username);
 		if (mangoUser != null) {
-			// ÉèÖÃ½ÇÉ«
+			// è®¾ç½®è§’è‰²
 			return new User(mangoUser.getUserName(), mangoUser.getPassword(),
 					AuthorityUtils.createAuthorityList(mangoUser.getRole()));
 		}
 
 		throw new UsernameNotFoundException("User '" + username
-					+ "' not found.");
+				+ "' not found.");
 	}
-	
+
 }

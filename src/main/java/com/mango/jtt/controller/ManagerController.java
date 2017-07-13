@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author HHL
  * 
  * 
- *         ¹ÜÀíÔ±¿ØÖÆÀà
+ *   ç®¡ç†å‘˜æ§åˆ¶ç±»
  */
 @Controller
 public class ManagerController {
 
 	/**
-	 * ¹ÜÀíÖĞĞÄÊ×Ò³
+	 * ç®¡ç†ä¸­å¿ƒé¦–é¡µ
 	 * 
 	 * @param model
 	 * @return
@@ -29,7 +29,7 @@ public class ManagerController {
 	}
 	
 	/**
-	 * ÏÔÊ¾µÇÂ¼Ò³ÃæÓÃ£¬Ö÷ÒªÊÇÏÔÊ¾´íÎóĞÅÏ¢
+	 * æ˜¾ç¤ºç™»å½•é¡µé¢ç”¨ï¼Œä¸»è¦æ˜¯æ˜¾ç¤ºé”™è¯¯ä¿¡æ¯
 	 * 
 	 * @param model
 	 * @param error
@@ -39,7 +39,7 @@ public class ManagerController {
 	public String login(Model model,
 			@RequestParam(value = "error", required = false) String error) {
 		if (error != null) {
-			model.addAttribute("error", "ÓÃ»§Ãû»òÃÜÂë´íÎó");
+			model.addAttribute("error", "ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯");
 		}
 		return "manager/login";
 	}

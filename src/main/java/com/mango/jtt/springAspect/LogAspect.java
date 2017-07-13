@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.mango.jtt.springAspect;
 
@@ -11,11 +11,11 @@ import com.mango.jtt.po.Order;
 import com.mango.jtt.util.LogUtil;
 
 /**
- * »ùÓÚ@AspectJ×¢½âµÄaopÅäÖÃ
- * 
+ * åŸºäº@AspectJæ³¨è§£çš„aopé…ç½®
+ *
  * @author HHL
- * 
- * @date 2016Äê10ÔÂ25ÈÕ
+ *
+ * @date 2016å¹´10æœˆ25æ—¥
  */
 @Component
 @Aspect
@@ -24,13 +24,13 @@ public class LogAspect {
 
 	@AfterReturning("execution(* com.mango.jtt.springTask.TaskJob.job1(..))")
 	public void logTaskJob() {
-		LogUtil.printInfoLog(getClass(), "ÈÎÎñ½øĞĞÖĞing......");
-		LogUtil.testLogError("ÈÎÎñ½øĞĞÖĞing......", null);
+		LogUtil.printInfoLog(getClass(), "ä»»åŠ¡è¿›è¡Œä¸­ing......");
+		LogUtil.testLogError("ä»»åŠ¡è¿›è¡Œä¸­ing......", null);
 	}
-	
+
 	@AfterReturning(pointcut = "execution(* com.mango.jtt.service.OrderServiceImpl.saveOrder(..)) && args(order)")
 	public void saveOrder(Order order) {
-		LogUtil.printInfoLog(getClass(), "±£´æ¶©µ¥£¬¶©µ¥ºÅÎª£º" + order.getOrderId());
+		LogUtil.printInfoLog(getClass(), "ä¿å­˜è®¢å•ï¼Œè®¢å•å·ä¸ºï¼š" + order.getOrderId());
 	}
 
 }

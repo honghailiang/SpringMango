@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.mango.jtt.service;
 
@@ -17,7 +17,7 @@ import com.mango.jtt.po.Product;
 /**
  * @author HHL
  *
- * @date 2016Äê11ÔÂ30ÈÕ
+ * @date 2016å¹´11æœˆ30æ—¥
  */
 @Service
 public class ProductServiceImpl implements IProductService {

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.mango.jtt.springTask;
 
@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 
 /**
  * @author HHL
- * 
- * @date 2016Äê9ÔÂ30ÈÕ
- * 
- *       spring ¶¨Ê±ÈÎÎñ
+ *
+ * @date 2016å¹´9æœˆ30æ—¥
+ *
+ *       spring å®šæ—¶ä»»åŠ¡
  */
 
 @Service
@@ -19,9 +19,9 @@ public class TaskJob {
 	/**
 	 * job1
 	 */
-	public void job1() {  
-		// ¸ÄÓÃspring aspect
-		// LogUtil.printInfoLog(getClass(), "ÈÎÎñ½øÐÐÖÐing......");
+	public void job1() {
+		// æ”¹ç”¨spring aspect
+		// LogUtil.printInfoLog(getClass(), "ä»»åŠ¡è¿›è¡Œä¸­ing......");
 	}
 
 }

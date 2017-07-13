@@ -17,7 +17,7 @@ import java.util.List;
  * Created by Administrator on 2017/6/16.
  */
 
-//½»¸øSpring¹ÜÀí£¬Èç¹û²»ÊÇ×Ô¶¯É¨Ãè¼ÓÔØbeanµÄ·½Ê½£¬ÔòÔÚxmlÀïÅäÒ»¸ö¼´¿É,refresh·¢²¼ContextRefreshedEventÊÂ¼şÊ±»áµ÷ÓÃ£¬ÔÚbean³õÊ¼»¯ºó
+//äº¤ç»™Springç®¡ç†ï¼Œå¦‚æœä¸æ˜¯è‡ªåŠ¨æ‰«æåŠ è½½beançš„æ–¹å¼ï¼Œåˆ™åœ¨xmlé‡Œé…ä¸€ä¸ªå³å¯,refreshå‘å¸ƒContextRefreshedEventäº‹ä»¶æ—¶ä¼šè°ƒç”¨ï¼Œåœ¨beanåˆå§‹åŒ–å
 @Component
 public class InitData implements ApplicationListener<ContextRefreshedEvent> {
 
@@ -29,19 +29,19 @@ public class InitData implements ApplicationListener<ContextRefreshedEvent> {
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
         if (event.getApplicationContext().getParent() == null) {
-            //¿âÖĞÃ»ÓĞÉÌÆ·ÔòÌí¼ÓÒ»¸ö
+            //åº“ä¸­æ²¡æœ‰å•†å“åˆ™æ·»åŠ ä¸€ä¸ª
             List<Product> products = productService.getProductList();
 
             if (null == products || products.isEmpty()){
                 Product product = new Product();
                 product.setProductName("Mango");
                 product.setQuantity(100);
-                product.setUnit("¸ö");
+                product.setUnit("ä¸ª");
                 product.setUnitPrice(100);
                 productService.saveProduct(product);
             }
 
-            //¿âÖĞÃ»ÓĞÓÃ»§ÔòÌí¼ÓÆÕÍ¨ÓÃ»§ºÍ¹ÜÀíÔ±ÓÃ»§
+            //åº“ä¸­æ²¡æœ‰ç”¨æˆ·åˆ™æ·»åŠ æ™®é€šç”¨æˆ·å’Œç®¡ç†å‘˜ç”¨æˆ·
             List<MangoUser> mangoUsers = userService.getUserList();
             if(null == mangoUsers || mangoUsers.isEmpty()){
                 MangoUser mangoUser = new MangoUser();

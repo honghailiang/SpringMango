@@ -22,7 +22,7 @@ import static org.junit.Assert.assertNotNull;
  *
  * @author <Authors name>
  * @version 1.0
- * @since <pre>ÆßÔÂ 13, 2017</pre>
+ * @since <pre>ä¸ƒæœˆ 13, 2017</pre>
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath*:applicationContext*.xml")

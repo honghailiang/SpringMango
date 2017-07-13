@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.mango.jtt.service;
 
@@ -10,11 +10,11 @@ import java.util.List;
 /**
  * @author HHL
  *
- * @date 2016Äê12ÔÂ8ÈÕ
+ * @date 2016å¹´12æœˆ8æ—¥
  */
 public interface IUserService {
 
-	public MangoUser getUserByName(String name);
+    public MangoUser getUserByName(String name);
 
     List<MangoUser> getUserList();
 

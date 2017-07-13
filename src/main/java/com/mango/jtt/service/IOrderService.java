@@ -1,37 +1,37 @@
 /**
- * 
+ *
  */
 package com.mango.jtt.service;
 
 import com.mango.jtt.po.Order;
 
 /**
- * ¶©µ¥·şÎñÀà
- * 
+ * è®¢å•æœåŠ¡ç±»
+ *
  * @author HHL
- * 
- * @date 2016Äê12ÔÂ1ÈÕ
+ *
+ * @date 2016å¹´12æœˆ1æ—¥
  */
 public interface IOrderService {
 
 	/**
-	 * Ìí¼Ó¶©µ¥
-	 * 
+	 * æ·»åŠ è®¢å•
+	 *
 	 * @param order
 	 */
 	void saveOrder(Order order);
 
 	/**
-	 * ¸ù¾İ¶©µ¥ºÅ»ñÈ¡¶©µ¥
-	 * 
+	 * æ ¹æ®è®¢å•å·è·å–è®¢å•
+	 *
 	 * @param orderId
 	 * @return
 	 */
 	Order getOrderById(Long orderId);
 
 	/**
-	 * ¸üĞÂ¶©µ¥
-	 * 
+	 * æ›´æ–°è®¢å•
+	 *
 	 * @param order
 	 */
 	void updateOrder(Order order);
