@@ -5,6 +5,7 @@ package com.mango.jtt.springAspect;
 
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
 import com.mango.jtt.po.Order;
@@ -31,6 +32,11 @@ public class LogAspect {
 	@AfterReturning(pointcut = "execution(* com.mango.jtt.service.OrderServiceImpl.saveOrder(..)) && args(order)")
 	public void saveOrder(Order order) {
 		LogUtil.printInfoLog(getClass(), "保存订单，订单号为：" + order.getOrderId());
+	}
+
+	@Before("execution(* com.mango.jtt.service.ProductServiceImpl.getProductById(..))")
+	public void getProductByIdAspect(){
+		LogUtil.printInfoLog(getClass(), "beforeGetProductById");
 	}
 
 }
