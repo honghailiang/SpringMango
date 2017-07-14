@@ -1,5 +1,6 @@
 package com.mango.jtt.init;
 
+import com.mango.jtt.BaseTest;
 import com.mango.jtt.po.Product;
 import com.mango.jtt.service.IProductService;
 import com.mango.jtt.service.IUserService;
@@ -24,10 +25,7 @@ import static org.junit.Assert.assertNotNull;
  * @version 1.0
  * @since <pre>七月 13, 2017</pre>
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath*:applicationContext*.xml")
-@ActiveProfiles("dev")
-public class InitMangoTest {
+public class InitMangoTest extends BaseTest{
 
     @Autowired
     private IProductService productService;

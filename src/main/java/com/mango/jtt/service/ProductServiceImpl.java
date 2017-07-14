@@ -48,8 +48,10 @@ public class ProductServiceImpl implements IProductService {
 	public static void JDBCExample(){
 		try {
 			//Class.forName("com.mysql.jdbc.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/hhl?useServerPrepStmts=true&cachePrepStmts=true&prepStmtCacheSize=25&prepStmtCacheSqlLimit=2048&characterEncoding=utf8&useSSL=false",
-					"root", "123456");
+//			Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/hhl?useServerPrepStmts=true&cachePrepStmts=true&prepStmtCacheSize=25&prepStmtCacheSqlLimit=2048&characterEncoding=utf8&useSSL=false",
+//					"root", "123456");
+			Connection connection = DriverManager.getConnection("jdbc:hsqldb:mem:test",
+					"sa", "");
 			PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM product p WHERE p.productName=?");
 			preparedStatement.setString(1,"Mango");
 			ResultSet resultSet = preparedStatement.executeQuery();
