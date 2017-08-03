@@ -17,3 +17,5 @@ build
 .classpath
 .settings
 .idea
+/out/
+out/production/resources/

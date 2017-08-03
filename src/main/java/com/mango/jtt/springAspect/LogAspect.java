@@ -26,7 +26,7 @@ public class LogAspect {
 	@AfterReturning("execution(* com.mango.jtt.springTask.TaskJob.job1(..))")
 	public void logTaskJob() {
 		LogUtil.printInfoLog(getClass(), "任务进行中ing......");
-		LogUtil.testLogError("任务进行中ing......", null);
+		LogUtil.testLogError("任务进行中ing......", new Exception("hhl"));
 	}
 
 	@AfterReturning(pointcut = "execution(* com.mango.jtt.service.OrderServiceImpl.saveOrder(..)) && args(order)")
